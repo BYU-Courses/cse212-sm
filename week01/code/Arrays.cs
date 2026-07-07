@@ -50,9 +50,13 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        int startIndex = data.Count - amount;
-        List<int> extractList = data.GetRange(startIndex, amount);
-        data.RemoveRange(startIndex, amount);
-        data.InsertRange(0, extractList);
+        int startIndex = data.Count - amount; //That is where I will start the extraction of the original list
+
+        List<int> extractList = data.GetRange(startIndex, amount); //amount represent the number of element to I extract in other list
+        
+        data.RemoveRange(startIndex, amount); //Remove the duplicate fragment in the original list
+
+        data.InsertRange(0, extractList); //I insert the extract list in the 0 position in the list
+ 
     }
 }
