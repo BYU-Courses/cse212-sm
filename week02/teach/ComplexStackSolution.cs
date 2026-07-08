@@ -1,6 +1,6 @@
 ﻿public static class ComplexStackSolution {
     public static void Main() {
-        // True (stack was empty at the end)
+        // True (stack was empty at the end
         Console.WriteLine(CheckBraces("(a == 3 or (b == 5 and c == 6))"));
         // False ...wrong opening square bracket (stack had only '(' in it before it was popped and compared with ']')
         //                          here -------\/
