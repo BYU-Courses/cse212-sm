@@ -1,4 +1,6 @@
-﻿public static class DisplaySums {
+﻿using System.Globalization;
+
+public static class DisplaySums {
     public static void Run() {
         DisplaySumPairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         // Should show something like (order does not matter):
@@ -27,7 +29,21 @@
     /// in the list.
     /// </summary>
     /// <param name="numbers">array of integers</param>
+
     private static void DisplaySumPairs(int[] numbers) {
         // TODO Problem 2 - This should print pairs of numbers in the given array
+        var numberPairs = new HashSet<int>(numbers);
+
+        foreach(var number in numbers)
+        {
+            var complement = 10 - number;
+
+            if (numberPairs.Contains(complement) && number != complement)
+            {
+                Console.WriteLine($"{number},{complement}");
+                numberPairs.Remove(number);
+                numberPairs.Remove(complement);
+            }
+        }
     }
 }
