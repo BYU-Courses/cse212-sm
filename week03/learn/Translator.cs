@@ -12,6 +12,7 @@ public class Translator
     }
 
     private Dictionary<string, string> _words = new();
+    
 
     /// <summary>
     /// Add the translation from 'from_word' to 'to_word'
@@ -25,6 +26,11 @@ public class Translator
     public void AddWord(string fromWord, string toWord)
     {
         // ADD YOUR CODE HERE
+
+        if (!_words.ContainsKey(fromWord))
+        {
+            _words.Add(fromWord,toWord);
+        }
     }
 
     /// <summary>
@@ -35,6 +41,11 @@ public class Translator
     public string Translate(string fromWord)
     {
         // ADD YOUR CODE HERE
-        return "";
+        var translation = "???";
+        if (_words.ContainsKey(fromWord))
+        {
+            translation = _words[fromWord];
+        }
+        return translation;
     }
 }
