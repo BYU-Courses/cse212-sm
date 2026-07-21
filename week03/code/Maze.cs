@@ -1,3 +1,5 @@
+using System.Transactions;
+
 /// <summary>
 /// Defines a maze using a dictionary. The dictionary is provided by the
 /// user when the Maze object is created. The dictionary will contain the
@@ -26,13 +28,28 @@ public class Maze
     }
 
     // TODO Problem 4 - ADD YOUR CODE HERE
+
+    
+
+
+
     /// <summary>
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
     /// </summary>
     public void MoveLeft()
-    {
+    {                
         // FILL IN CODE
+        bool[] directions = _mazeMap[(_currX, _currY)];
+        
+        if(directions[0] == true)
+        {
+            _currX--;    
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -42,6 +59,18 @@ public class Maze
     public void MoveRight()
     {
         // FILL IN CODE
+        bool[] directions = _mazeMap[(_currX, _currY)];
+
+        if(directions[1] == true)
+        {
+            _currX++;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        
     }
 
     /// <summary>
@@ -50,7 +79,17 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        bool[] directions = _mazeMap[(_currX, _currY)];
+
+        if(directions[2] == true)
+        {
+            _currY--;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
     }
 
     /// <summary>
@@ -60,6 +99,17 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+        bool[] directions = _mazeMap[(_currX, _currY)];
+
+        if(directions[3] == true)
+        {
+            _currY++;
+        }
+        else
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
     }
 
     public string GetStatus()
