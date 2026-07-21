@@ -22,6 +22,6 @@ public class SpecificInformation
 
 public class SpecificProperties
 {
-    public int mag{get; set;}
+    public double mag{get; set;}
     public string place {get; set;}
 }
