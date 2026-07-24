@@ -191,10 +191,8 @@ public static class SetsAndMaps
 
         foreach(var feature in featureCollection.features)
         {
-            data.Add($"Place - {feature.properties.place} - Mag {feature.properties.mag}");
+            data.Add($"{feature.properties.place} - Mag {feature.properties.mag}");
         }
-
-
         return data.ToArray();
     }
 }
